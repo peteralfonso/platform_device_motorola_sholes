@@ -26,6 +26,8 @@
 USE_CAMERA_STUB := false
 BOARD_USE_FROYO_LIBCAMERA := true
 
+#BOARD_USES_TI_CAMERA_HAL := true
+#TARGET_USES_OLD_LIBSENSORS_HAL:=true
 # inherit from the proprietary version
 -include vendor/motorola/sholes/BoardConfigVendor.mk
 
@@ -81,3 +83,5 @@ BOARD_HAS_SMALL_RECOVERY := true
 USE_SHOLES_PROPERTY := true
 TARGET_PREBUILT_KERNEL := device/motorola/sholes/kernel
 TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/sholes/recovery_kernel
+
+HARDWARE_OMX := true
