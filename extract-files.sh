@@ -28,7 +28,6 @@ adb pull /system/lib/egl/libGLESv1_CM_POWERVR_SGX530_121.so ../../../vendor/moto
 adb pull /system/lib/egl/libGLESv2_POWERVR_SGX530_121.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/hw/gralloc.omap3.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/hw/lights.sholes.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/hw/sensors.sholes.so ../../../vendor/motorola/$DEVICE/proprietary
 
 adb pull /system/app/ProgramMenuSystem.apk ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/app/ProgramMenu.apk ../../../vendor/motorola/$DEVICE/proprietary
@@ -152,7 +151,6 @@ PRODUCT_COPY_FILES := \\
     vendor/motorola/__DEVICE__/proprietary/libnmea.so:obj/lib/libnmea.so \\
     vendor/motorola/__DEVICE__/proprietary/gralloc.omap3.so:obj/lib/hw/gralloc.omap3.so \\
     vendor/motorola/__DEVICE__/proprietary/lights.sholes.so:obj/lib/hw/lights.sholes.so \\
-    vendor/motorola/__DEVICE__/proprietary/sensors.sholes.so:obj/lib/hw/sensors.sholes.so
 
 PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/ProgramMenuSystem.apk:/system/app/ProgramMenuSystem.apk \\
@@ -172,7 +170,6 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/libGLESv2_POWERVR_SGX530_121.so:/system/lib/egl/libGLESv2_POWERVR_SGX530_121.so \\
     vendor/motorola/__DEVICE__/proprietary/gralloc.omap3.so:/system/lib/hw/gralloc.omap3.so \\
     vendor/motorola/__DEVICE__/proprietary/lights.sholes.so:/system/lib/hw/lights.sholes.so \\
-    vendor/motorola/__DEVICE__/proprietary/sensors.sholes.so:/system/lib/hw/sensors.sholes.so \\
     vendor/motorola/__DEVICE__/proprietary/libbattd.so:/system/lib/libbattd.so \\
     vendor/motorola/__DEVICE__/proprietary/libglslcompiler.so:/system/lib/libglslcompiler.so \\
     vendor/motorola/__DEVICE__/proprietary/libHPImgApi.so:/system/lib/libHPImgApi.so \\

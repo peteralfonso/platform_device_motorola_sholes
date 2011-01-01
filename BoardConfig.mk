@@ -26,14 +26,11 @@
 USE_CAMERA_STUB := false
 BOARD_USE_FROYO_LIBCAMERA := true
 
-#BOARD_USES_TI_CAMERA_HAL := true
-#TARGET_USES_OLD_LIBSENSORS_HAL:=true
 # inherit from the proprietary version
 -include vendor/motorola/sholes/BoardConfigVendor.mk
 
 # use pre-kernel.35 vold usb mounting
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-
 
 TARGET_BOARD_PLATFORM := omap3
 
@@ -44,8 +41,6 @@ TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8
 
 TARGET_BOOTLOADER_BOARD_NAME := sholes
-
-BOARD_VENDOR_QCOM_AMSS_VERSION := 3200
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
@@ -85,3 +80,4 @@ TARGET_PREBUILT_KERNEL := device/motorola/sholes/kernel
 TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/sholes/recovery_kernel
 
 HARDWARE_OMX := true
+BOARD_USES_GPSSHIM := true
