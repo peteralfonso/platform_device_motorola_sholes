@@ -19,8 +19,6 @@
 # not specialized for any geography.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
@@ -127,7 +125,7 @@ $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 # stuff common to all HTC phones
 #$(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
 
 PRODUCT_NAME := generic_sholes
