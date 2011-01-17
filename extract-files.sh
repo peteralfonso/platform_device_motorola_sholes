@@ -43,10 +43,17 @@ adb pull /system/lib/liblvmxipc.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libmoto_ril.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/liboemcamera.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libOMX.TI.AAC.decode.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libOMX.TI.Video.Decoder.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libOMX.TI.JPEG.Encoder.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libOMX.TI.Video.encoder.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libOMX.TI.AMR.encode.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libOMX.TI.MP3.decode.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libOMX.TI.WBAMR.decode.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libOMX.TI.WMA.decode.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libOMX.TI.WBAMR.encode.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libOMX.TI.AMR.decode.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libOMX.TI.AAC.encode.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libOMX_Core.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libopencore_asflocal.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libopencore_asflocalreg.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libpppd_plugin-ril.so ../../../vendor/motorola/$DEVICE/proprietary
