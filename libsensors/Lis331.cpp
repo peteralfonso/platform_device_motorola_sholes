@@ -67,6 +67,10 @@ LisSensor::LisSensor()
             }
         }
     }
+
+    if(!mEnabled) {
+        close_device();
+    }
 }
 
 LisSensor::~LisSensor() {
@@ -96,7 +100,7 @@ int LisSensor::enable(int32_t handle, int en)
         short flags = newState;
         err = ioctl(dev_fd, cmd, &flags);
         err = err<0 ? -errno : 0;
-        LOGE_IF(err, "ECS_IOCTL_APP_SET_XXX failed (%s)", strerror(-err));
+        LOGE_IF(err, "LIS331DLH_IOCTL_SET_ENABLE failed (%s)", strerror(-err));
         if (!err) {
             mEnabled &= ~(1<<what);
             mEnabled |= (uint32_t(flags)<<what);

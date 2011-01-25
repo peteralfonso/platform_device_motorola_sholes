@@ -32,7 +32,7 @@
 
 static const struct sensor_t sSensorList[] = {
         { "LIS331DLH 3-axis Accelerometer",
-                "Bosh",
+                "ST Micro",
                 1, SENSORS_HANDLE_BASE+ID_A,
                 SENSOR_TYPE_ACCELEROMETER, 4.0f*9.81f, (4.0f*9.81f)/256.0f, 0.2f, 0, { } },
         { "AK8973 3-axis Magnetic field sensor",
@@ -44,13 +44,13 @@ static const struct sensor_t sSensorList[] = {
                 1, SENSORS_HANDLE_BASE+ID_O,
                 SENSOR_TYPE_ORIENTATION, 360.0f, 1.0f, 7.0f, 0, { } },
         { "SFH7743 Proximity sensor",
-                "Capella Microsystems",
+                "OSRAM Opto Semiconductors",
                 1, SENSORS_HANDLE_BASE+ID_P,
                 SENSOR_TYPE_PROXIMITY,
                 6.0f, 6.0f,
                 0.5f, 0, { } },
         { "LM3530 Light sensor",
-                "Capella Microsystems",
+                "National Semiconductor",
                 1, SENSORS_HANDLE_BASE+ID_L,
                 SENSOR_TYPE_LIGHT, 10240.0f, 1.0f, 0.5f, 0, { } },
 };

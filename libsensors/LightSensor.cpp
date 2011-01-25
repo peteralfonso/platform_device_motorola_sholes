@@ -32,7 +32,6 @@
 
 LightSensor::LightSensor()
     : SensorBase(LS_DEVICE_NAME, "lm3530_led"),
-      mEnabled(0),
       mInputReader(4),
       mHasPendingEvent(false)
 {
@@ -41,19 +40,7 @@ LightSensor::LightSensor()
     mPendingEvent.type = SENSOR_TYPE_LIGHT;
     memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
 
-     open_device();
-
-    int flags = 0;
-    if (!ioctl(dev_fd, LIGHTSENSOR_IOCTL_GET_ENABLED, &flags)) {
-        if (flags) {
-            mEnabled = 1;
-            setInitialState();
-        }
-    }
-
-    if (!mEnabled) {
-        close_device();
-    }
+    setInitialState();
 }
 
 LightSensor::~LightSensor() {
@@ -62,33 +49,17 @@ LightSensor::~LightSensor() {
 int LightSensor::setInitialState() {
     struct input_absinfo absinfo;
     if (!ioctl(data_fd, EVIOCGABS(EVENT_TYPE_LIGHT), &absinfo)) {
-        mPendingEvent.light = indexToValue(absinfo.value);
+        mPendingEvent.light = absinfo.value;
         mHasPendingEvent = true;
     }
     return 0;
 }
 
 int LightSensor::enable(int32_t, int en) {
-    int flags = en ? 1 : 0;
-    int err = 0;
-    if (flags != mEnabled) {
-        if (!mEnabled) {
-            open_device();
-        }
-        err = ioctl(dev_fd, LIGHTSENSOR_IOCTL_ENABLE, &flags);
-        err = err<0 ? -errno : 0;
-        LOGE_IF(err, "LIGHTSENSOR_IOCTL_ENABLE failed (%s)", strerror(-err));
-        if (!err) {
-            mEnabled = en ? 1 : 0;
-            if (en) {
-                setInitialState();
-            }
-        }
-        if (!mEnabled) {
-            close_device();
-        }
+    if(en) {
+        setInitialState();
     }
-    return err;
+    return 0;
 }
 
 bool LightSensor::hasPendingEvents() const {
@@ -104,7 +75,7 @@ int LightSensor::readEvents(sensors_event_t* data, int count)
         mHasPendingEvent = false;
         mPendingEvent.timestamp = getTimestamp();
         *data = mPendingEvent;
-        return mEnabled ? 1 : 0;
+        return 1;
     }
 
     ssize_t n = mInputReader.fill(data_fd);
@@ -116,20 +87,25 @@ int LightSensor::readEvents(sensors_event_t* data, int count)
 
     while (count && mInputReader.readEvent(&event)) {
         int type = event->type;
-        if (type == EV_ABS) {
+        if (type == EV_LED) { // light sensor 1
             if (event->code == EVENT_TYPE_LIGHT) {
-                if (event->value != -1) {
-                    // FIXME: not sure why we're getting -1 sometimes
-                    mPendingEvent.light = indexToValue(event->value);
-                }
+                mPendingEvent.light = event->value;
             }
+        } else if (type == EV_MSC) { // light sensor 2
+            /* Light sensor 2 seems to put out lower lux values than
+             * light sensor 1, and I can't decide which is more "accurate",
+             * so for now just disabling #2
+
+            if (event->code == EVENT_TYPE_LIGHT2) {
+                mPendingEvent.light = event->value;
+            }
+
+             */
         } else if (type == EV_SYN) {
             mPendingEvent.timestamp = timevalToNano(event->time);
-            if (mEnabled) {
-                *data++ = mPendingEvent;
-                count--;
-                numEventReceived++;
-            }
+            *data++ = mPendingEvent;
+            count--;
+            numEventReceived++;
         } else {
             LOGE("LightSensor: unknown event (type=%d, code=%d)",
                     type, event->code);
@@ -138,17 +114,4 @@ int LightSensor::readEvents(sensors_event_t* data, int count)
     }
 
     return numEventReceived;
-}
-
-float LightSensor::indexToValue(size_t index) const
-{
-    static const float luxValues[8] = {
-            10.0, 160.0, 225.0, 320.0,
-            640.0, 1280.0, 2600.0, 10240.0
-    };
-
-    const size_t maxIndex = sizeof(luxValues)/sizeof(*luxValues) - 1;
-    if (index > maxIndex)
-        index = maxIndex;
-    return luxValues[index];
 }

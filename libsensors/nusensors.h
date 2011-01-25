@@ -77,7 +77,8 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 #define EVENT_TYPE_TEMPERATURE      ABS_THROTTLE
 #define EVENT_TYPE_STEP_COUNT       ABS_GAS
 #define EVENT_TYPE_PROXIMITY        ABS_DISTANCE
-#define EVENT_TYPE_LIGHT            ABS_MISC
+#define EVENT_TYPE_LIGHT            LED_MISC // led sensor 1
+#define EVENT_TYPE_LIGHT2           MSC_RAW  // led sensor 2
 
 // 720 LSG = 1G
 #define LSG                         (720.0f)
