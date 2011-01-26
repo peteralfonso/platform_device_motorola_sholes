@@ -35,7 +35,6 @@ class LightSensor : public SensorBase {
     sensors_event_t mPendingEvent;
     bool mHasPendingEvent;
 
-    float indexToValue(size_t index) const;
     int setInitialState();
 
 public:

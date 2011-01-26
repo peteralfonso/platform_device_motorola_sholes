@@ -61,8 +61,8 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 #define LIS_DEVICE_NAME     "/dev/lis331dlh"
 
 #define EVENT_TYPE_ACCEL_X          ABS_X
-#define EVENT_TYPE_ACCEL_Y          ABS_Z
-#define EVENT_TYPE_ACCEL_Z          ABS_Y
+#define EVENT_TYPE_ACCEL_Y          ABS_Y
+#define EVENT_TYPE_ACCEL_Z          ABS_Z
 #define EVENT_TYPE_ACCEL_STATUS     ABS_WHEEL
 
 #define EVENT_TYPE_YAW              ABS_RX
@@ -81,7 +81,7 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 #define EVENT_TYPE_LIGHT2           MSC_RAW  // led sensor 2
 
 // 720 LSG = 1G
-#define LSG                         (720.0f)
+#define LSG                         (980.0f)
 
 
 // conversion of acceleration data to SI units (m/s^2)
@@ -96,7 +96,7 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 #define CONVERT_M_Y                 (-CONVERT_M)
 #define CONVERT_M_Z                 (CONVERT_M)
 
-#define CONVERT_O                   (1.0f/50.0f)
+#define CONVERT_O                   (1.0f/64.0f)
 #define CONVERT_O_Y                 (CONVERT_O)
 #define CONVERT_O_P                 (CONVERT_O)
 #define CONVERT_O_R                 (-CONVERT_O)
