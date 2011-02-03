@@ -80,8 +80,8 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 #define EVENT_TYPE_LIGHT            LED_MISC // led sensor 1
 #define EVENT_TYPE_LIGHT2           MSC_RAW  // led sensor 2
 
-// 720 LSG = 1G
-#define LSG                         (980.0f)
+// 1000 LSG = 1G
+#define LSG                         (1000.0f)
 
 
 // conversion of acceleration data to SI units (m/s^2)

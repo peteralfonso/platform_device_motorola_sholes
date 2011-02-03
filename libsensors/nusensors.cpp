@@ -123,7 +123,6 @@ sensors_poll_context_t::~sensors_poll_context_t() {
 
 int sensors_poll_context_t::activate(int handle, int enabled) {
     int index = handleToDriver(handle);
-LOGD("sensor activation called: handle=%d, enabled=%d********************************", handle, enabled);
     if (index < 0) return index;
     int err =  mSensors[index]->enable(handle, enabled);
     if (enabled && !err) {

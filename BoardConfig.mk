@@ -25,6 +25,7 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := false
 BOARD_USE_FROYO_LIBCAMERA := true
+BOARD_USE_YUV422I_DEFAULT_COLORFORMAT := true
 
 # inherit from the proprietary version
 -include vendor/motorola/sholes/BoardConfigVendor.mk
