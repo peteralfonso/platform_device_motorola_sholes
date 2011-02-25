@@ -97,14 +97,6 @@ adb pull /system/lib/dsp/wbamrdec_sn.dll64P ../../../vendor/motorola/$DEVICE/pro
 adb pull /system/lib/dsp/wbamrenc_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/dsp/wmadec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/dsp/wmv9dec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/act_mirred.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/act_police.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/cls_u32.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/em_u32.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/ifb.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/sch_htb.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/sch_ingress.ko ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/modules/wl127x_test.ko ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/tts/lang_pico/de-DE_gl0_sg.bin ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/tts/lang_pico/de-DE_ta.bin ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/tts/lang_pico/en-GB_kh0_sg.bin ../../../vendor/motorola/$DEVICE/proprietary
@@ -230,14 +222,6 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/wbamrenc_sn.dll64P:/system/lib/dsp/wbamrenc_sn.dll64P \\
     vendor/motorola/__DEVICE__/proprietary/wmadec_sn.dll64P:/system/lib/dsp/wmadec_sn.dll64P \\
     vendor/motorola/__DEVICE__/proprietary/wmv9dec_sn.dll64P:/system/lib/dsp/wmv9dec_sn.dll64P \\
-    vendor/motorola/__DEVICE__/proprietary/act_mirred.ko:/system/lib/modules/act_mirred.ko \\
-    vendor/motorola/__DEVICE__/proprietary/act_police.ko:/system/lib/modules/act_police.ko \\
-    vendor/motorola/__DEVICE__/proprietary/cls_u32.ko:/system/lib/modules/cls_u32.ko \\
-    vendor/motorola/__DEVICE__/proprietary/em_u32.ko:/system/lib/modules/em_u32.ko \\
-    vendor/motorola/__DEVICE__/proprietary/ifb.ko:/system/lib/modules/ifb.ko \\
-    vendor/motorola/__DEVICE__/proprietary/sch_htb.ko:/system/lib/modules/sch_htb.ko \\
-    vendor/motorola/__DEVICE__/proprietary/sch_ingress.ko:/system/lib/modules/sch_ingress.ko \\
-    vendor/motorola/__DEVICE__/proprietary/wl127x_test.ko:/system/lib/modules/wl127x_test.ko \\
     vendor/motorola/__DEVICE__/proprietary/de-DE_gl0_sg.bin:/system/tts/lang_pico/de-DE_gl0_sg.bin \\
     vendor/motorola/__DEVICE__/proprietary/de-DE_ta.bin:/system/tts/lang_pico/de-DE_ta.bin \\
     vendor/motorola/__DEVICE__/proprietary/en-GB_kh0_sg.bin:/system/tts/lang_pico/en-GB_kh0_sg.bin \\
