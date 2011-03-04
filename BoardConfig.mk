@@ -82,3 +82,4 @@ TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/sholes/recovery_kernel
 
 HARDWARE_OMX := true
 BOARD_USES_GPSSHIM := true
+BOARD_NO_RGBX_8888 := true
