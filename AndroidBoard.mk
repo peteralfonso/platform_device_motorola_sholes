@@ -31,5 +31,13 @@ $(file) : $(TARGET_OUT)/usr/keychars/qwerty.kcm.bin
 	@rm -rf $@
 	$(hide) ln -sf qwerty.kcm.bin $@
 
+file := $(TARGET_OUT)/usr/keychars/cpcap-key.kcm.bin
+ALL_PREBUILT += $(file)
+$(file) : $(TARGET_OUT)/usr/keychars/qwerty.kcm.bin
+	@echo "Symlink: $@ -> qwerty.kcm.bin"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf qwerty.kcm.bin $@
+
 # include the non-open-source counterpart to this file
 -include vendor/motorola/sholes/AndroidBoardVendor.mk
