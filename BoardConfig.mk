@@ -30,9 +30,6 @@ BOARD_USE_YUV422I_DEFAULT_COLORFORMAT := true
 # inherit from the proprietary version
 -include vendor/motorola/sholes/BoardConfigVendor.mk
 
-# use pre-kernel.35 vold usb mounting
-BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-
 TARGET_BOARD_PLATFORM := omap3
 
 TARGET_CPU_ABI := armeabi-v7a
