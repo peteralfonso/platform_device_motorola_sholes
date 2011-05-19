@@ -15,22 +15,22 @@
 #
 
 #
-# This is the product configuration for a generic GSM passion,
+# This is the product configuration for a generic CDMA sholes,
 # not specialized for any geography.
 #
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-## (1) First, the most specific values, i.e. the aspects that are specific to GSM
+## (1) First, the most specific values, i.e. the aspects that are specific to CDMA
 
 PRODUCT_COPY_FILES += \
     device/motorola/sholes/init.sholes.rc:root/init.sholes.rc
 
-## (2) Also get non-open-source GSM-specific aspects if available
+## (2) Also get non-open-source CDMA-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 
-## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
+## (3)  Finally, the least specific parts, i.e. the non-CDMA-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.android.wifi-watchlist=GoogleGuest \
 	ro.error.receiver.system.apps=com.google.android.feedback \
@@ -58,7 +58,7 @@ DEVICE_PACKAGE_OVERLAYS += device/motorola/sholes/overlay
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# Passion uses high-density artwork where available
+# sholes uses high-density artwork where available
 PRODUCT_LOCALES += hdpi
 
 PRODUCT_COPY_FILES += \
