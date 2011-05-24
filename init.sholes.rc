@@ -127,6 +127,9 @@ on boot
     insmod /system/lib/modules/sch_htb.ko
     insmod /system/lib/modules/em_u32.ko
 
+# Increase sd card throughput 
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 896
+
 # Ecompass daemon
 service akmd2 /system/bin/akmd2
     user compass
