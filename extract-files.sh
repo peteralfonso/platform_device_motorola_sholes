@@ -37,7 +37,6 @@ adb pull /system/lib/libHPImgApi.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libIMGegl.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libinterstitial.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libLCML.so ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/lib/liblvmxipc.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libmoto_ril.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/liboemcamera.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libOMX.TI.AAC.decode.so ../../../vendor/motorola/$DEVICE/proprietary
@@ -150,7 +149,6 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/libIMGegl.so:/system/lib/libIMGegl.so \\
     vendor/motorola/__DEVICE__/proprietary/libinterstitial.so:/system/lib/libinterstitial.so \\
     vendor/motorola/__DEVICE__/proprietary/libLCML.so:/system/lib/libLCML.so \\
-    vendor/motorola/__DEVICE__/proprietary/liblvmxipc.so:/system/lib/liblvmxipc.so \\
     vendor/motorola/__DEVICE__/proprietary/libmoto_ril.so:/system/lib/libmoto_ril.so \\
     vendor/motorola/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
     vendor/motorola/__DEVICE__/proprietary/libOMX.TI.AAC.decode.so:/system/lib/libOMX.TI.AAC.decode.so \\
