@@ -1,11 +1,12 @@
 on early-boot
 
-# Adjust the out of memory thresholds to account for the larget
-# space on sholes.  These numbers are in pages (4k).  Must be kept
-# in sync with init.rc.  This must be done before the regular init.rc
-# since these properies can't change once set.
+# Adjust the out of memory thresholds and oom_adj values to account 
+# for the smaller space on sholes. These numbers are in pages (4k).  
+# Must be kept in sync with init.rc. This must be done before the 
+# regular init.rc since these properies can't change once set.
     setprop ro.FOREGROUND_APP_MEM 2048
     setprop ro.VISIBLE_APP_MEM 3072
+    setprop ro.PERCEPTIBLE_APP_ADJ 1
     setprop ro.SECONDARY_SERVER_MEM 6144
     setprop ro.BACKUP_APP_MEM 6144
     setprop ro.HOME_APP_MEM 6144
@@ -18,6 +19,7 @@ on early-boot
 on boot
 
 # Overwrite what init.rc selected for the memory killer params to match above.
+    write /sys/module/lowmemorykiller/parameters/adj 0,1,1,4,7,15
     write /sys/module/lowmemorykiller/parameters/minfree 2048,3072,4096,6144,7168,8192
     
     chown compass compass /dev/lis331dlh
