@@ -10,7 +10,6 @@ on early-boot
     setprop ro.BACKUP_APP_MEM 6144
     setprop ro.HOME_APP_MEM 6144
     setprop ro.HIDDEN_APP_MEM 7168
-    setprop ro.CONTENT_PROVIDER_MEM 8192
     setprop ro.EMPTY_APP_MEM 8192
     
     chmod 0666 /dev/DspBridge
@@ -19,7 +18,7 @@ on early-boot
 on boot
 
 # Overwrite what init.rc selected for the memory killer params to match above.
-    write /sys/module/lowmemorykiller/parameters/minfree 2048,3072,6144,7168,8192,8192
+    write /sys/module/lowmemorykiller/parameters/minfree 2048,3072,4096,6144,7168,8192
     
     chown compass compass /dev/lis331dlh
     chmod 660 /dev/lis331dlh
