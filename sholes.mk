@@ -44,14 +44,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
 	ro.cdma.data_retry_config=default_randomization=2000,0,0,120000,180000,540000,960000 \
 	ro.config.vc_call_vol_steps=7 \
-	ro.cdma.otaspnumschema=SELC,1,80,99 \
 	ro.telephony.call_ring.multiple=false \
 	ro.telephony.call_ring.delay=3000 \
 	ro.url.safetylegal=http://www.motorola.com/staticfiles/Support/legal/?model=A855 \
 	ro.setupwizard.enable_bypass=1 \
-	ro.media.dec.jpeg.memcap=20000000 \
-	dalvik.vm.lockprof.threshold=500 \
-	dalvik.vm.dexopt-flags=m=y
+	ro.media.dec.jpeg.memcap=20000000
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/sholes/overlay
 
