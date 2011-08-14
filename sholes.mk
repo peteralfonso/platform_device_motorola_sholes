@@ -96,8 +96,11 @@ PRODUCT_PACKAGES += \
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# sholes uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
+# Screen density is actually considered a locale (since it is taken into account
+# the the build-time selection of resources). The product definitions including
+# this file must pay attention to the fact that the first entry in the final
+# PRODUCT_LOCALES expansion must not be a density.
+PRODUCT_LOCALES := hdpi
 
 PRODUCT_COPY_FILES += \
     device/motorola/sholes/vold.fstab:system/etc/vold.fstab\
@@ -120,12 +123,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
-
-# media profiles and capabilities spec
-# $(call inherit-product, device/motorola/sholes/media_a1026.mk)
-
-# stuff common to all HTC phones
-#$(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, build/target/product/small_base.mk)
 
