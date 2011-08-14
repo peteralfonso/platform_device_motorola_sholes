@@ -39,6 +39,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.locationfeatures=1 \
 	ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
 	ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+	ro.setupwizard.mode=OPTIONAL \
 	ro.cdma.home.operator.numeric=310004 \
 	ro.cdma.home.operator.alpha=Verizon \
 	ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
