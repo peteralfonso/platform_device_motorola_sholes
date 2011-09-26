@@ -32,7 +32,6 @@ $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-CDMA-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.error.receiver.system.apps=com.google.android.feedback \
 	ro.com.google.locationfeatures=1 \
 	ro.cdma.home.operator.numeric=310004 \
 	ro.cdma.home.operator.alpha=Verizon \
